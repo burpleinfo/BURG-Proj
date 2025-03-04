@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BURG - Vehicle Rentals</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/burg-logo.png') }}" type="image/png">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/burg-logo.png') }}" alt="BURG Logo">
+            </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/browse">Browse Vehicles</a></li>
+                <li><a href="/register">Become a Partner</a></li>
+                <li><a href="/support">Support</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Rent the Perfect Vehicle for Your Needs</h1>
+            <form action="/search" method="GET">
+                <input type="text" name="location" placeholder="Enter location" required>
+                <input type="date" name="start_date" required>
+                <input type="date" name="end_date" required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </header>
+    <section class="featured-vehicles">
+        <h2>Featured Vehicles</h2>
+        <div class="vehicle-list">
+            {% for vehicle in vehicles %}
+                <div class="vehicle-card">
+                    <img src="{{ url_for('static', filename='images/' + vehicle.image) }}" alt="{{ vehicle.name }}">
+                    <h3>{{ vehicle.name }}</h3>
+                    <p>${{ vehicle.price }}/day</p>
+                    <a href="{{ url_for('vehicle', vehicle_id=vehicle.id) }}">View Details</a>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2023 BURG. All rights reserved.</p>
+    </footer>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/67a339123a8427326079f1ca/1ijapdt1h';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+</html>

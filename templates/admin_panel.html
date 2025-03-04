@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - BURG</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">BURG</div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/admin">Admin Panel</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="admin-panel">
+        <h2>Admin Panel</h2>
+        <div class="stats">
+            <h3>Platform Statistics</h3>
+            <p>Total Users: 100</p>
+            <p>Total Vehicles: 50</p>
+            <p>Total Bookings: 200</p>
+        </div>
+        <div class="actions">
+            <h3>Actions</h3>
+            <button>Approve Vehicle Listings</button>
+            <button>View Reports</button>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 BURG. All rights reserved.</p>
+    </footer>
+</body>
+</html>

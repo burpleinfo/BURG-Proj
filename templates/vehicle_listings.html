@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Vehicles - BURG</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">BURG</div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/browse">Browse Vehicles</a></li>
+                <li><a href="/register">Become a Partner</a></li>
+                <li><a href="/support">Support</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="vehicle-listings">
+        <h2>Available Vehicles</h2>
+        <div class="vehicle-list">
+            <!-- Vehicle cards will be dynamically loaded here -->
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 BURG. All rights reserved.</p>
+    </footer>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
